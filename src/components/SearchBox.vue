@@ -2,12 +2,13 @@
   <div>
   <input type="text" v-model="searchInput" v-on:input="search" />
     <div v-if="filteredCountries.length > 0">
-      <p v-for="country in filteredCountries">{{country.name}}</p>
+      <country-details v-for="country in filteredCountries" :country="country"></country-details>
     </div>
   </div>
 </template>
 
 <script>
+import CountryDetails from './CountryDetails.vue'
 export default {
   data(){
     return {
@@ -17,9 +18,12 @@ export default {
   },
   name: 'search-box',
   props: ['countries'],
+  components: {
+    "country-details": CountryDetails
+  },
   methods: {
     search(){
-      const filteredCountries = this.countries.filter(country => country.name.includes(this.searchInput)?)
+      const filteredCountries = this.countries.filter(country => country.name.toLowerCase().includes(this.searchInput.toLowerCase()))
       this.filteredCountries = filteredCountries
     }
   }
@@ -28,3 +32,5 @@ export default {
 
 <style lang="css" scoped>
 </style>
+
+v-on:keyup
