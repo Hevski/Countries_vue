@@ -32,8 +32,8 @@ export default {
     fetch('https://restcountries.eu/rest/v2/all')
     .then(res => res.json())
     .then(countries => this.countries = countries)
-    eventBus.$on('clicked-country', (country) => {
-      this.selectedCountry = country
+    eventBus.$on('clicked-country', (index) => {
+      this.selectedCountry = this.countries[index]
     })
   }
 }

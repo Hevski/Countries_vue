@@ -14,7 +14,7 @@ export default {
   data(){
     return {
       searchInput: '',
-      filteredCountries: []
+      filteredCountries: [],
     }
   },
   name: 'search-box',
