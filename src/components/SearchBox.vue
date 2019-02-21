@@ -2,7 +2,7 @@
   <div>
   <input type="text" v-model="searchInput" v-on:input="search" />
     <div v-if="filteredCountries.length > 0">
-      <country-details v-for="country in filteredCountries" :country="country"></country-details>
+      <country-details v-for="(country, index) in filteredCountries" :country="country" :key="index"></country-details>
     </div>
   </div>
 </template>
@@ -32,5 +32,3 @@ export default {
 
 <style lang="css" scoped>
 </style>
-
-v-on:keyup
