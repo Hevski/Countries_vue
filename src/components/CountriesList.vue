@@ -16,6 +16,7 @@ export default {
   methods: {
     handleChange(){
       eventBus.$emit('clicked-country', this.countries[event.target.value])
+      console.log(this.countries[event.target.value]);
     }
   }
 }

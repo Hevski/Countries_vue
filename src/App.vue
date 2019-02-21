@@ -40,6 +40,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+  h1 {
+    text-align: center;
+  }
   .main-container {
     display: flex;
     justify-content: space-between;

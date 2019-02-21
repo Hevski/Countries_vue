@@ -1,5 +1,6 @@
 <template lang="html">
   <div>
+  <p>Search for Country</p>
   <input type="text" v-model="searchInput" v-on:input="search" />
     <div v-if="filteredCountries.length > 0">
       <country-details v-for="(country, index) in filteredCountries" :country="country" :key="index"></country-details>
